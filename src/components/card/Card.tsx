@@ -33,7 +33,7 @@ export const CustomCard = ({card, selectedMode}: ICustomCurd) => (
             <Button variant="contained" color="primary" fullWidth>
                 upgrade
             </Button>
-            <Typography style={{marginTop: '20px'}}>Lorem text</Typography>
+            <Typography className='mt-10'>Lorem text</Typography>
             <List sx={{listStyleType: 'disc', paddingLeft: "20px"}}>
                 <ListItem sx={{display: 'list-item'}}>
                     <ListItemText primary="Lorem 1"/>

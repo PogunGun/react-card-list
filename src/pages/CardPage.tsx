@@ -1,4 +1,4 @@
-import {Button, ButtonGroup, Grid, Link, Typography} from "@mui/material";
+import {Button, ButtonGroup, Grid, Link, Tooltip, Typography} from "@mui/material";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import SelectSmall from "../components/Selector";
 import AddHomeWorkIcon from "@mui/icons-material/AddHomeWork";
@@ -71,8 +71,10 @@ export const CardPage = () => {
                     </Grid>
                     <Grid item xs={12} sm={6} md={6} className={style.centerGrid}>
                         <div className={style.centerGrid}>
-                            Published maps
-                            <HelpOutlineOutlinedIcon className='mr-10'/>
+                            <p className='mr-10'> Published maps</p>
+                            <Tooltip title="Prompt Published maps">
+                                <HelpOutlineOutlinedIcon className='mr-10' />
+                            </Tooltip>
                         </div>
                         <SelectSmall/>
                     </Grid>
