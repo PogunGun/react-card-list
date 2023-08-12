@@ -20,9 +20,6 @@ export default function SelectSmall() {
                 label="1"
                 onChange={handleChange}
             >
-                <MenuItem value="2">
-                    <em>None</em>
-                </MenuItem>
                 <MenuItem value={1}>1</MenuItem>
             </Select>
         </FormControl>
