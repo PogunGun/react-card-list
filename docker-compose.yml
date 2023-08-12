@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  nest-api:
+    container_name: react-app
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    command: sh -c "npm run start"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.7"
+          memory: "4g"
+    ports:
+      - '3000:3000'
