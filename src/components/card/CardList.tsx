@@ -9,9 +9,9 @@ interface ICardList {
 }
 
 export const CardList = ({cards, selectedMode}: ICardList) => (
-    <Grid container spacing={5} style={{marginTop:'10px'}}>
+    <Grid container spacing={5} className='mt-10'>
         {cards.map((card: ICard) => (
-            <Grid item xs={12} sm={6} md={4}>
+            <Grid item xs={12} sm={6} md={4} key={card.id}>
                 <CustomCard card={card} selectedMode={selectedMode}/>
             </Grid>
         ))}

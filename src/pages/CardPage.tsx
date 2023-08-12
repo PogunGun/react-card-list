@@ -10,14 +10,14 @@ import {CardList} from "../components/card/CardList";
 import style from '../styles/card/card.module.css'
 
 const MONTHLY_CARDS: Array<ICard> = [
-    {title: "Story", cost: 39,},
-    {title: "Pro", cost: 75},
-    {title: "Pro+", cost: 150}
+    {id:1,title: "Story", cost: 39,},
+    {id:2,title: "Pro", cost: 75},
+    {id:3,title: "Pro+", cost: 150}
 ]
 const YEARLY_CARDS: Array<ICard> = [
-    {title: "Story", cost: 24, savePercentage: 39},
-    {title: "Pro", cost: 49, savePercentage: 35},
-    {title: "Pro+", cost: 99, savePercentage: 34},
+    {id:4,title: "Story", cost: 24, savePercentage: 39},
+    {id:5,title: "Pro", cost: 49, savePercentage: 35},
+    {id:6,title: "Pro+", cost: 99, savePercentage: 34},
 ]
 
 export const CardPage = () => {
@@ -31,8 +31,8 @@ export const CardPage = () => {
         getCardList("Monthly", MONTHLY_CARDS)
     }, [])
     return (
-        <section style={{margin: 'auto', maxWidth: '100vh'}}>
-            <div>
+        <section className='full-width m-auto'>
+            <div className='mt-50'>
                 <div>
                     <Typography variant="h4" gutterBottom fontWeight="bold" textAlign="center">
                         Choose your plan
@@ -69,10 +69,10 @@ export const CardPage = () => {
                             </Button>
                         </ButtonGroup>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={6} style={{display: 'flex'}}>
+                    <Grid item xs={12} sm={6} md={6} className={style.centerGrid}>
                         <div className={style.centerGrid}>
                             Published maps
-                            <HelpOutlineOutlinedIcon style={{marginLeft: "10px"}}/>
+                            <HelpOutlineOutlinedIcon className='mr-10'/>
                         </div>
                         <SelectSmall/>
                     </Grid>
@@ -84,13 +84,13 @@ export const CardPage = () => {
             <Grid container spacing={5} className={style.centerGrid}>
                 <Grid item xs={12} sm={6} md={3}
                       className={style.helpElem}>
-                    <AddHomeWorkIcon color="primary" fontSize="large" style={{marginRight: "10px"}}/>
+                    <AddHomeWorkIcon color="primary" fontSize="large" className='mr-10'/>
                     <p> Lorem ipsum <Link href="#" underline="hover">dolor</Link> sit amet, consectetur adipisicing elit
                     </p>
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}
                       className={style.helpElem}>
-                    <AddModeratorIcon color="primary" fontSize="large" style={{marginRight: "10px"}}/>
+                    <AddModeratorIcon color="primary" fontSize="large" className='mr-10'/>
                     <p><Link href="#" underline="hover">
                         Lorem
                     </Link> ipsum dolor sit amet, consectetur adipisicing elit</p>
@@ -98,7 +98,7 @@ export const CardPage = () => {
                 <Grid item xs={12} sm={6} md={3}
                       className={style.helpElem}
                 >
-                    <AddShoppingCartOutlinedIcon color="primary" fontSize="large" style={{marginRight: "10px"}}/>
+                    <AddShoppingCartOutlinedIcon color="primary" fontSize="large" className='mr-10'/>
                     <p> Lorem ipsum dolor sit <Link href="#" underline="hover">amet</Link> , consectetur adipisicing
                         elit</p>
                 </Grid>
