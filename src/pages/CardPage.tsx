@@ -9,12 +9,12 @@ import {ICard, SelectedMode} from "../types/card.types";
 import {CardList} from "../components/card/CardList";
 import style from '../styles/card/card.module.css'
 
-const mounth: Array<ICard> = [
+const MONTHLY_CARDS: Array<ICard> = [
     {title: "Story", cost: 39,},
     {title: "Pro", cost: 75},
     {title: "Pro+", cost: 150}
 ]
-const year: Array<ICard> = [
+const YEARLY_CARDS: Array<ICard> = [
     {title: "Story", cost: 24, savePercentage: 39},
     {title: "Pro", cost: 49, savePercentage: 35},
     {title: "Pro+", cost: 99, savePercentage: 34},
@@ -28,7 +28,7 @@ export const CardPage = () => {
         setSelectedMode(mode);
     }
     useEffect(() => {
-        getCardList("Monthly", mounth)
+        getCardList("Monthly", MONTHLY_CARDS)
     }, [])
     return (
         <section style={{margin: 'auto', maxWidth: '100vh'}}>
@@ -56,14 +56,14 @@ export const CardPage = () => {
                             <Button
                                 variant={selectedMode === 'Monthly' ? 'contained' : 'outlined'}
                                 color="primary"
-                                onClick={() => getCardList('Monthly', mounth)}
+                                onClick={() => getCardList('Monthly', MONTHLY_CARDS)}
                             >
                                 Monthly
                             </Button>
                             <Button
                                 variant={selectedMode === 'Yearly' ? 'contained' : 'outlined'}
                                 color="primary"
-                                onClick={() => getCardList('Yearly', year)}
+                                onClick={() => getCardList('Yearly', YEARLY_CARDS)}
                             >
                                 Yearly
                             </Button>
@@ -80,8 +80,8 @@ export const CardPage = () => {
             </div>
             <div>
             </div>
-            <CardList cards={cards} selectedMode={selectedMode}/>
-            <Grid container spacing={20} className={style.centerGrid}>
+            <CardList cards={cards} selectedMode={selectedMode} />
+            <Grid container spacing={5} className={style.centerGrid}>
                 <Grid item xs={12} sm={6} md={3}
                       className={style.helpElem}>
                     <AddHomeWorkIcon color="primary" fontSize="large" style={{marginRight: "10px"}}/>

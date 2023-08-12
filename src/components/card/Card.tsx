@@ -8,7 +8,7 @@ export interface ICustomCurd {
 }
 
 export const CustomCard = ({card, selectedMode}: ICustomCurd) => (
-    <Card className='card' >
+    <Card className={style.card} >
         <CardContent>
             <Typography variant="h4" gutterBottom fontWeight="bold" color="primary">
                 {card.title}
